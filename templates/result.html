@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4a148c;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-info {
+            background-color: #e1bee7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .navigation {
+            margin-top: 40px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 15px 30px;
+            background-color: #4a148c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .navigation a:hover {
+            background-color: #311b92;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+        <div class="result-info">
+            <p><span class="highlight">Predicted Tumor Type:</span> {{ prediction }}</p>
+        </div>
+        <div class="navigation">
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
